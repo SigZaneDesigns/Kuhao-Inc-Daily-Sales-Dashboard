@@ -95,10 +95,47 @@
     user-select: none; transition: color 0.15s; border-radius: 12px 0 0 12px;
   }
   .drag-handle:hover { color: var(--accent); background: rgba(212,137,10,0.06); }
-  .drag-card .card { margin-left: 36px; }
+  .drag-card .card { margin-left: 0; }
   .drag-handle:active { cursor: grabbing; }
   .drag-card.dragging { opacity: 0.4; transform: scale(0.97); }
   .drag-card.drag-over { outline: 2px dashed var(--accent); outline-offset: 4px; border-radius: 14px; }
+
+  /* Centered layout */
+  body { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    body { padding: 12px 10px; }
+    h1 { font-size: 1.3rem; }
+    .subtitle { font-size: 0.8rem; margin-bottom: 16px; }
+    .kpi-grid { flex-direction: column; gap: 10px; }
+    .kpi-item { flex: 1 1 100%; min-width: unset; padding: 14px 10px; }
+    .kpi-item .value { font-size: 1.5rem; }
+    #drag-container { flex-direction: column; gap: 14px; }
+    .drag-card, .drag-card.wide { flex: 1 1 100%; min-width: unset; }
+    .card { padding: 14px; border-radius: 10px; }
+    .chart-wrap { height: 220px; }
+    .chart-wrap-tall { height: 260px; }
+    .loc-tabs { gap: 4px; }
+    .loc-tab { padding: 4px 10px; font-size: 0.68rem; }
+    .kpi-group { padding: 14px 12px 12px; margin-bottom: 16px; }
+    .kpi-group-header { margin-bottom: 10px; }
+    .metric-label { font-size: 0.8rem; }
+    .metric-value { font-size: 0.85rem; }
+    .has-tooltip::after { width: 240px; font-size: 0.72rem; right: -10px; }
+    .chart-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .header-flex { flex-direction: column; align-items: flex-start !important; gap: 6px; }
+    .header-flex img { height: 36px !important; }
+  }
+
+  @media (max-width: 420px) {
+    .kpi-item .value { font-size: 1.3rem; }
+    .kpi-item .label { font-size: 0.68rem; }
+    h1 { font-size: 1.1rem; }
+    .chart-wrap { height: 180px; }
+    .chart-wrap-tall { height: 220px; }
+  }
+
 </style>
 </head>
 <body>
